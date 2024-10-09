@@ -1,0 +1,45 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a 
+        class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('html')
+        }"
+        (click)="selectedFrameWork = 'html'"
+        href="javascript:;">Html</a>
+    </li>
+    <li class="nav-item">
+        <a 
+        class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('css')
+        }"
+        (click)="selectedFrameWork = 'css'"
+        href="javascript:;">CSS</a>
+    </li>
+    <li class="nav-item">
+        <a 
+        class="nav-link"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('javascript')
+        }"
+        (click)="selectedFrameWork = 'javascript'"
+        href="javascript:;">Javascript</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="card">
+        <div class="card-body"
+        *ngIf ="selectedFrameWork.toLowerCase().includes('html')">
+            <strong>HTML</strong> stands for Hyper-Text Markup Langugae. 
+        </div>
+        <div class="card-body"
+        *ngIf ="selectedFrameWork.toLowerCase().includes('css')">
+            <strong>CSS</strong> stands for Cascading styling sheet .Used to style Html Element.
+        </div>
+        <div class="card-body"
+        *ngIf ="selectedFrameWork.toLowerCase().includes('javascript')">
+            <strong>Javascript</strong> is a used to make web page interactive and to add functionality to web page.
+        </div>
+    </div>
+</div>

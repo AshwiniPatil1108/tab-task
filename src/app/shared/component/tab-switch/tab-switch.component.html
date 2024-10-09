@@ -1,0 +1,47 @@
+<ul class="nav nav-pills mt-5 mb-3">
+    <li class="nav-item"
+    (click)="selectedFrameWork ='node'"
+    >
+        <a 
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('node')
+        }"
+        class="nav-link"
+        href="javascript:;">Node</a>
+    </li>
+    <li class="nav-item"
+    (click)="selectedFrameWork ='bootstrap'"
+    >
+        <a 
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('bootstrap')
+        }"
+        class="nav-link"
+        href="javascript:;">Bootstrap</a>
+    </li>
+    <li class="nav-item"
+    (click)="selectedFrameWork ='sass'"
+    >
+        <a 
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('sass')
+        }"
+        class="nav-link"
+        href="javascript:;">Sass</a>
+    </li>
+</ul>
+
+<div [ngSwitch]="selectedFrameWork">
+    <p class="alert alert-warning"
+    *ngSwitchCase="'node'">
+        <strong>Node</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio repellendus doloribus consequatur cupiditate.
+    </p>
+    <p class="alert alert-warning"
+    *ngSwitchCase="'bootstrap'">
+        <strong>Bootstrap</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio repellendus doloribus consequatur cupiditate.
+    </p>
+    <p class="alert alert-warning"
+    *ngSwitchCase="'sass'"> 
+        <strong>Sass</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio repellendus doloribus consequatur cupiditate.
+    </p>
+</div>
